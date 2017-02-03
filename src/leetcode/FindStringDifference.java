@@ -1,8 +1,10 @@
 package leetcode;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class FindStringDifference {
 
@@ -13,10 +15,14 @@ public class FindStringDifference {
 				map.put(s.charAt(i), 1);
 			} else {
 				int value = map.get(s.charAt(i));
-				map.put(s.charAt(i), value++);
+				map.put(s.charAt(i), ++value);
 			}
 		}
-		
+		 Iterator<Entry<Character, Integer>> it = map.entrySet().iterator();
+		 while (it.hasNext()) {
+			 	Map.Entry pair = (Map.Entry)it.next();
+		        System.out.println(pair.getKey() + " = " + pair.getValue());
+		 }
 		for(int i=0; i<t.length(); i++){
 			if(!map.containsKey(t.charAt(i))){
 				return t.charAt(i);
