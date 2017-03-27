@@ -1,0 +1,114 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 4088 bytes for char in c:\build_area\jdk6_31\hotspot\src\share\vm\utilities/stack.inline.hpp
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:44), pid=13172, tid=14632
+#
+# JRE version: 6.0_31-b05
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.6-b01 mixed mode windows-amd64 compressed oops)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000000522800):  VMThread [stack: 0x0000000006290000,0x0000000006390000] [id=14632]
+
+Stack: [0x0000000006290000,0x0000000006390000]
+VM_Operation (0x00000000021af470): ParallelGCFailedAllocation, mode: safepoint, requested by thread 0x0000000000369000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000006600000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=18072, stack(0x0000000006b90000,0x0000000006c90000)]
+  0x00000000065f4800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=16344, stack(0x0000000006a90000,0x0000000006b90000)]
+  0x00000000065ef800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=14900, stack(0x0000000006990000,0x0000000006a90000)]
+  0x00000000065ec800 JavaThread "Attach Listener" daemon [_thread_blocked, id=17436, stack(0x0000000006890000,0x0000000006990000)]
+  0x00000000065e7800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=15616, stack(0x0000000006790000,0x0000000006890000)]
+  0x000000000052c000 JavaThread "Finalizer" daemon [_thread_blocked, id=14516, stack(0x0000000006490000,0x0000000006590000)]
+  0x000000000052a800 JavaThread "Reference Handler" daemon [_thread_blocked, id=17780, stack(0x0000000006390000,0x0000000006490000)]
+  0x0000000000369000 JavaThread "main" [_thread_blocked, id=17888, stack(0x00000000020b0000,0x00000000021b0000)]
+
+Other Threads:
+=>0x0000000000522800 VMThread [stack: 0x0000000006290000,0x0000000006390000] [id=14632]
+  0x0000000006610800 WatcherThread [stack: 0x0000000006c90000,0x0000000006d90000] [id=15532]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000000000036b430] Threads_lock - owner thread: 0x0000000000522800
+[0x000000000036b930] Heap_lock - owner thread: 0x0000000000369000
+
+Heap
+ PSYoungGen      total 461056K, used 230464K [0x00000007d5cb0000, 0x0000000800000000, 0x0000000800000000)
+  eden space 230592K, 0% used [0x00000007d5cb0000,0x00000007d5cb0000,0x00000007e3de0000)
+  from space 230464K, 100% used [0x00000007e3de0000,0x00000007f1ef0000,0x00000007f1ef0000)
+  to   space 230464K, 0% used [0x00000007f1ef0000,0x00000007f1ef0000,0x0000000800000000)
+ PSOldGen        total 883456K, used 882432K [0x0000000781600000, 0x00000007b74c0000, 0x00000007d5cb0000)
+  object space 883456K, 99% used [0x0000000781600000,0x00000007b73c0008,0x00000007b74c0000)
+ PSPermGen       total 21248K, used 2592K [0x000000077c400000, 0x000000077d8c0000, 0x0000000781600000)
+  object space 21248K, 12% used [0x000000077c400000,0x000000077c688100,0x000000077d8c0000)
+
+Code Cache  [0x00000000021b0000, 0x0000000002420000, 0x00000000051b0000)
+ total_blobs=184 nmethods=17 adapters=121 free_code_cache=49926400 largest_free_block=5376
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042f000 	C:\opt\mapr\java\bin\javaw.exe
+0x0000000077c20000 - 0x0000000077dca000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077b00000 - 0x0000000077c1f000 	C:\Windows\system32\kernel32.dll
+0x000007fefca00000 - 0x000007fefca6a000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe820000 - 0x000007fefe8fb000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefd160000 - 0x000007fefd1ff000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd650000 - 0x000007fefd66f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe900000 - 0x000007fefea2d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077a00000 - 0x0000000077afa000 	C:\Windows\system32\USER32.dll
+0x000007fefd0f0000 - 0x000007fefd157000 	C:\Windows\system32\GDI32.dll
+0x000007fefd5a0000 - 0x000007fefd5ae000 	C:\Windows\system32\LPK.dll
+0x000007fefd670000 - 0x000007fefd73a000 	C:\Windows\system32\USP10.dll
+0x000007fefea30000 - 0x000007fefea5e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefcfe0000 - 0x000007fefd0e9000 	C:\Windows\system32\MSCTF.dll
+0x000000006d8b0000 - 0x000000006e068000 	C:\opt\mapr\java\jre\bin\server\jvm.dll
+0x000007fefb1c0000 - 0x000007fefb1fb000 	C:\Windows\system32\WINMM.dll
+0x000000006d820000 - 0x000000006d82e000 	C:\opt\mapr\java\jre\bin\verify.dll
+0x000000006d450000 - 0x000000006d477000 	C:\opt\mapr\java\jre\bin\java.dll
+0x000000006d870000 - 0x000000006d882000 	C:\opt\mapr\java\jre\bin\zip.dll
+0x0000000077df0000 - 0x0000000077df7000 	C:\Windows\system32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: leetcode.Tester
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\opt\mapr\java
+CLASSPATH=.
+USERNAME=rshah
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 8291872k(532552k free), swap 8540288k(6160k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.6-b01) for windows-amd64 JRE (1.6.0_31-b05), built on Feb  3 2012 18:34:57 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Tue Feb 07 16:40:38 2017
+elapsed time: 8 seconds
+

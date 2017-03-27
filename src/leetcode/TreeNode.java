@@ -1,11 +1,12 @@
 package leetcode;
 
 public class TreeNode {
-	private int data;
-	private TreeNode right;
-	private TreeNode left;
+	public int val;
+	public TreeNode right;
+	public TreeNode left;
 	public int sum;
-	
+}
+/*
 	
 	public TreeNode(int data){
 		this.setData(data);
@@ -73,3 +74,4 @@ public class TreeNode {
 	}
 	
 }
+*/
